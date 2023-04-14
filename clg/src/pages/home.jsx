@@ -1,4 +1,4 @@
-// import Form from "../components/form/Form";
+import Form from "../components/form/Form";
 import Coba from "../components/form/Coba";
 import Navbar from "../components/navbar/Navbar";
 import Topbar from "../components/topbar/Topbar";
@@ -11,7 +11,7 @@ export default function Home() {
     <div>
         <Topbar />
         <Navbar />
-        <Coba />
+        <Form />
     </div>
   )
 }

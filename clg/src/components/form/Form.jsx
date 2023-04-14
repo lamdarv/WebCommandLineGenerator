@@ -10,6 +10,7 @@ export default function Form() {
     const [frontendFramework, setFrontendFramework] = useState("");
     const [cssFramework, setCssFramework] = useState("");
     const [example, setExample] = useState(false);
+    const [command, setCommand] = useState("");
   
     const generateCommand = () => {
       let command = `npx create-kuproy@beta ${projectName}`;
@@ -80,12 +81,15 @@ export default function Form() {
         command += " yes";
       }
   
-      return command
-      
-  
+      return command;
     };
 
-    // console.log(command);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const generatedCommand = generateCommand();
+        setCommand(generatedCommand);
+    };
+
     return (
       <div>
         <form action="">
@@ -214,24 +218,24 @@ export default function Form() {
                         <div>
                             <input
                             type="radio"
-                            id="react"
+                            id="React"
                             name="frontendFramework"
-                            value="react"
-                            checked={frontendFramework === "react"}
+                            value="React"
+                            checked={frontendFramework === "React"}
                             onChange={(e) => setFrontendFramework(e.target.value)}
                             />
-                            <label htmlFor="react">React</label>
+                            <label htmlFor="React">React</label>
                         </div>
                         <div>
                             <input
                             type="radio"
-                            id="vue"
+                            id="Vue"
                             name="frontendFramework"
-                            value="react"
-                            checked={frontendFramework === "react"}
+                            value="Vue"
+                            checked={frontendFramework === "Vue"}
                             onChange={(e) => setFrontendFramework(e.target.value)}
                             />
-                            <label htmlFor="vue">Vue</label>
+                            <label htmlFor="Vue">Vue</label>
                         </div>
                         <label htmlFor="cssFramework">Framework CSS</label>
                         <div>
@@ -260,7 +264,7 @@ export default function Form() {
 
                     <div>
                         <button onClick={handleSubmit}>Generate Command</button>
-                        <p>Generated Command: {command}</p>
+                        <p>{command}</p>
                     </div>
                 </>
             )
