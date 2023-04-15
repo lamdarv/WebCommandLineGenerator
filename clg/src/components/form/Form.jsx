@@ -221,7 +221,7 @@ export default function Form() {
                       {/* FBE & DB */}
                       <div className="flex border-b border-gray-40 pb-3">
                         {/* Framework BE */}
-                        <div id="fbe">
+                        <div id="fbe" className="w-1/2">
                           <label className="flex font-quicksand font-bold text-lg " htmlFor="backendFramework">Framework Backend</label>
                           <div className="flex mt-2 inline-block">
                             <div className="mr-5">
@@ -250,7 +250,7 @@ export default function Form() {
                           </div>
                         </div>
 
-                        <div id="db" className="ml-20">
+                        <div id="db" className="">
                           {/* Database */}
                           <label className="flex font-quicksand font-bold text-lg" htmlFor="database">Database</label>
                           <div className="flex mt-2">
@@ -294,10 +294,10 @@ export default function Form() {
                       </div>
                       
                       {/* FFE & FCSS */}
-                      <div className="flex border-b border-gray-40 pb-3">
-                        <div id="ffe">
+                      <div className="mt-7 flex border-b border-gray-40 pb-3 ">
+                        <div id="ffe" className="w-1/2">
                           {/* Framework FE */}
-                          <label className="flex mt-7 font-quicksand font-bold text-lg" htmlFor="frontendFramework">Framework Frontend</label>
+                          <label className="flex font-quicksand font-bold text-lg" htmlFor="frontendFramework">Framework Frontend</label>
                           <div className="flex mt-2">
                             <div className="mr-5">
                               <input
@@ -325,9 +325,9 @@ export default function Form() {
                           </div>
                         </div>
 
-                        <div id="fcss" className="ml-20">
+                        <div id="fcss" className="">
                           {/* Framework CSS */}
-                          <label className="flex mt-7 font-quicksand font-bold text-lg" htmlFor="cssFramework">Framework CSS</label>
+                          <label className="flex font-quicksand font-bold text-lg" htmlFor="cssFramework">Framework CSS</label>
                           <div className="flex mt-2">
                             <div className="mr-5">
                             <input
@@ -385,8 +385,211 @@ export default function Form() {
                     </>
                     )
                 }
+                {type === "frontend" && (
+                  <>
+                  <div className="m-7">
+                    {/* FFE & FCSS */}
+                    <div className="mt-7 flex border-b border-gray-40 pb-3 ">
+                        <div id="ffe" className="w-1/2">
+                          {/* Framework FE */}
+                          <label className="flex font-quicksand font-bold text-lg" htmlFor="frontendFramework">Framework Frontend</label>
+                          <div className="flex mt-2">
+                            <div className="mr-5">
+                              <input
+                                type="radio"
+                                id="React"
+                                name="frontendFramework"
+                                value="React"
+                                checked={frontendFramework === "React"}
+                                onChange={(e) => setFrontendFramework(e.target.value)}
+                                />
+                                <label className="ml-1 font-mulish font-normal text-base" htmlFor="React">React</label>
+                            </div>
 
-                {/* {type === "backend"} */}
+                            <div>
+                              <input
+                                type="radio"
+                                id="Vue"
+                                name="frontendFramework"
+                                value="Vue"
+                                checked={frontendFramework === "Vue"}
+                                onChange={(e) => setFrontendFramework(e.target.value)}
+                                />
+                                <label className="ml-1 font-mulish font-normal text-base" htmlFor="Vue">Vue</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="fcss" className="">
+                          {/* Framework CSS */}
+                          <label className="flex font-quicksand font-bold text-lg" htmlFor="cssFramework">Framework CSS</label>
+                          <div className="flex mt-2">
+                            <div className="mr-5">
+                            <input
+                              type="radio"
+                              id="bootstrap"
+                              name="cssFramework"
+                              value="bootstrap"
+                              checked={cssFramework === "bootstrap"}
+                              onChange={(e) => setCssFramework(e.target.value)}
+                              />
+                              <label className="ml-1 font-mulish font-normal text-base" htmlFor="bootstrap">Bootstrap</label>
+                            </div>
+                            <div>
+                            <input
+                              type="radio"
+                              id="tailwind"
+                              name="cssFramework"
+                              value="tailwind"
+                              checked={cssFramework === "tailwind"}
+                              onChange={(e) => setCssFramework(e.target.value)}
+                              />
+                              <label className="ml-1 font-mulish font-normal text-base" htmlFor="tailwind">Tailwind</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Examples */}
+                      <label className="flex mt-7 font-quicksand font-bold text-lg" htmlFor="examples">Examples</label>
+                      <div className="flex border-b border-gray-40 pb-3 mt-2">
+                        <div>
+                            <input
+                            type="radio"
+                            id="yes"
+                            name="examples"
+                            value="yes"
+                            checked={examples === "yes"}
+                            onChange={(e) => setExample(e.target.value)}
+                            />
+                            <label className="ml-1 mr-5 font-mulish font-normal text-base" htmlFor="yes">Yes</label>
+                        </div>
+                        <div>
+                            <input
+                            type="radio"
+                            id="no"
+                            name="examples"
+                            value="no"
+                            checked={examples === "no"}
+                            onChange={(e) => setExample(e.target.value)}
+                            />
+                            <label className="ml-1 font-mulish font-normal text-base" htmlFor="no">No</label>
+                        </div>
+                      </div>
+                  </div>
+
+                  </>
+                )}
+
+                {type === "backend" && (
+                  <>
+                    <div className="m-7">
+                      {/* FBE & DB */}
+                      <div className="flex border-b border-gray-40 pb-3">
+                        {/* Framework BE */}
+                        <div id="fbe" className="w-1/2">
+                          <label className="flex font-quicksand font-bold text-lg " htmlFor="backendFramework">Framework Backend</label>
+                          <div className="flex mt-2 inline-block">
+                            <div className="mr-5">
+                                <input
+                                type="radio"
+                                id="fastify"
+                                name="backendFramework"
+                                value="fastify"
+                                checked={backendFramework === "fastify"}
+                                onChange={(e) => setBackendFramework(e.target.value)}
+                                />
+                                <label className="ml-1 font-mulish font-normal text-base" htmlFor="fastify">Fastify</label>
+                            </div>
+
+                            <div>
+                                <input
+                                type="radio"
+                                id="express"
+                                name="backendFramework"
+                                value="express"
+                                checked={backendFramework === "express"}
+                                onChange={(e) => setBackendFramework(e.target.value)}
+                                />
+                                <label className="ml-1 font-mulish font-normal text-base" htmlFor="express">Express</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="db" className="">
+                          {/* Database */}
+                          <label className="flex font-quicksand font-bold text-lg" htmlFor="database">Database</label>
+                          <div className="flex mt-2">
+                            <div className="mr-5">
+                              <input
+                                type="radio"
+                                id="MongoDB"
+                                name="database"
+                                value="MongoDB"
+                                checked={database === "MongoDB"}
+                                onChange={(e) => setDatabase(e.target.value)}
+                                />
+                                <label className="ml-1 font-mulish font-normal text-base" htmlFor="MongoDB">MongoDB</label>
+                            </div>
+
+                            <div className="mr-5">
+                            <input
+                              type="radio"
+                              id="PostgreSQL"
+                              name="database"
+                              value="PostgreSQL"
+                              checked={database === "PostgreSQL"}
+                              onChange={(e) => setDatabase(e.target.value)}
+                              />
+                              <label className="ml-1 font-mulish font-normal text-base" htmlFor="PostgreSQL">PostgreSQL</label>
+                            </div>
+
+                            <div className="mr-5">
+                            <input
+                              type="radio"
+                              id="MySQL"
+                              name="database"
+                              value="MySQL"
+                              checked={database === "MySQL"}
+                              onChange={(e) => setDatabase(e.target.value)}
+                              />
+                              <label className="ml-1 font-mulish font-normal text-base" htmlFor="MySQL">MySQL</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Examples */}
+                      <label className="flex mt-7 font-quicksand font-bold text-lg" htmlFor="examples">Examples</label>
+                      <div className="flex border-b border-gray-40 pb-3 mt-2">
+                        <div>
+                            <input
+                            type="radio"
+                            id="yes"
+                            name="examples"
+                            value="yes"
+                            checked={examples === "yes"}
+                            onChange={(e) => setExample(e.target.value)}
+                            />
+                            <label className="ml-1 mr-5 font-mulish font-normal text-base" htmlFor="yes">Yes</label>
+                        </div>
+                        <div>
+                            <input
+                            type="radio"
+                            id="no"
+                            name="examples"
+                            value="no"
+                            checked={examples === "no"}
+                            onChange={(e) => setExample(e.target.value)}
+                            />
+                            <label className="ml-1 font-mulish font-normal text-base" htmlFor="no">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+
                 <div>
                     <button onClick={handleSubmit} className="font-quicksand bg-custom-green-1 hover:drop-shadow-xl text-white font-bold py-1 px-7 rounded-40 focus:outline-none focus:shadow-outline">
                       Generate
@@ -411,7 +614,7 @@ export default function Form() {
                 </button>
               </CopyToClipboard>
             </div>
-        </div>s
+        </div>
       </div>
     )
   }

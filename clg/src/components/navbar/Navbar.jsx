@@ -6,7 +6,7 @@ export default function Navbar() {
     
     <nav className="flex items-center justify-between">
       <div className="flex items-center">
-        <img src={`${process.env.PUBLIC_URL}/assets/logo_kuproy.svg`} alt="Logo" className="h-12  mr-10" />
+        <img src={`${process.env.PUBLIC_URL}/assets/logo_kuproy2.svg`} alt="Logo" className="h-12  mr-10" />
       </div>
     </nav>
   );
