@@ -22,10 +22,13 @@ module.exports = {
       },
       borderRadius: {
         '40':'40px',
+        '10':'10px',
       },
       fontFamily: {
         quicksand: ['Quicksand', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
+        mulish: ['Mulish', 'sans-serif'],
+        scpro : ['Source Code Pro', 'monospace'],
       },
       fontSize: {
         '13':'13px',
@@ -33,7 +36,11 @@ module.exports = {
       maxWidth: {
         'w1': '45rem',
         'w2': '50rem',
-      }
+      },
+      marginLeft: {
+        '1/2': '50%',
+        '1/4': '25%',
+      },
     },
   },
   plugins: [],
