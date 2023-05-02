@@ -145,7 +145,7 @@ export default function Form() {
             <div className="flex flex-col">
               <div className="flex flex-col">
                 <label className="flex items-left font-quicksand font-bold text-lg" htmlFor="projectName">Project Name</label>
-                <p className="flex items-left text-xs">(Special character such as space, ?, :, is not allowed)</p>
+                <p className="flex items-left text-xs">(Hanya dapat menggunakan karakter huruf aA-zZ, angka 0-9, dan _ (underscore))</p>
               </div>
 
               <input
